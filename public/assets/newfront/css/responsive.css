@@ -1,0 +1,417 @@
+@media screen and (min-width: 1200px) and (max-width: 1366px) {
+
+    .mainSectionContent h2 {
+        font-size: 3rem;
+    }
+
+    .navbar-light .navbar-nav .nav-link {
+        font-size: 0.9rem;
+    }
+
+    nav .nav-item {
+        margin: auto 0px 0 15px;
+    }
+
+    .verticallyCenter {
+        transform: translate(0px, 38%);
+    }
+
+    .sectionThree .verticallyCenter {
+        transform: translate(0px, 10%);
+    }
+
+    .sectionThree .verticallyCenter .aboutUs {
+        margin-bottom: 80px;
+    }
+
+    /* Services Inner Pages */
+    .amazonDropshipAutomationMainBanner {
+        padding: 180px 0 100px;
+    }
+
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .mainSectionContent h2 {
+        font-size: 2rem;
+    }
+
+    .navbar-light .navbar-nav .nav-link {
+        font-size: 0.8rem;
+    }
+
+    nav .nav-item {
+        margin: auto 0px 0 15px;
+    }
+
+    img.imgCards01 {
+        max-width: 100px;
+    }
+
+    img.imgCards02 {
+        max-width: 100px;
+        left: -4%;
+    }
+
+    img.imgCards03 {
+        bottom: -10%;
+        max-width: 210px;
+    }
+
+    nav .nav-item {
+        margin: auto 0px 0 0px;
+    }
+
+    .hambergur {
+        right: 10px;
+    }
+
+    .sectionThree .verticallyCenter .aboutUs {
+        margin-bottom: 50px;
+    }
+
+    /* Services Inner Pages */
+    .amazonDropshipAutomationMainBanner {
+        padding: 120px 0 80px;
+    }
+
+}
+
+@media screen and (min-width: 716px) and (max-width: 991px) {
+
+    .mainSectionContent h2 {
+        font-size: 2rem;
+    }
+
+    .navbar-light .navbar-nav .nav-link {
+        font-size: 0.8rem;
+    }
+
+    nav .nav-item {
+        margin: auto 0px 0 15px;
+    }
+
+    img.imgCards01 {
+        max-width: 100px;
+    }
+
+    img.imgCards02 {
+        max-width: 100px;
+        left: -4%;
+    }
+
+    img.imgCards03 {
+        bottom: -10%;
+        max-width: 210px;
+    }
+
+    nav .nav-item {
+        margin: auto 0px 0 0px;
+    }
+
+    .hambergur {
+        right: 30px;
+    }
+
+    .sectionThree .verticallyCenter .aboutUs {
+        margin-bottom: 50px;
+    }
+
+}
+
+@media screen and (min-width: 608px) and (max-width: 715px) {
+
+    .mainSectionContent h2 {
+        font-size: 1.7rem;
+    }
+
+    .navbar-light .navbar-nav .nav-link {
+        font-size: 0.8rem;
+    }
+
+    nav .nav-item {
+        margin: auto 0px 0 15px;
+    }
+
+    img.imgCards01 {
+        max-width: 100px;
+    }
+
+    img.imgCards02 {
+        max-width: 100px;
+        left: -4%;
+    }
+
+    img.imgCards03 {
+        bottom: -10%;
+        max-width: 210px;
+    }
+
+    nav .nav-item {
+        margin: auto 0px 0 0px;
+    }
+
+    .hambergur {
+        right: 30px;
+        top: 25px;
+    }
+
+    .sectionThree .verticallyCenter .aboutUs {
+        margin-bottom: 40px;
+    }
+
+}
+
+@media screen and (min-width: 320px) and (max-width: 607px) {
+
+    .mainSectionContent h2 {
+        font-size: 1rem;
+    }
+
+    .navbar-light .navbar-nav .nav-link {
+        font-size: 0.8rem;
+    }
+
+    nav .nav-item {
+        margin: auto 0px 0 15px;
+    }
+
+    img.imgCards01 {
+        max-width: 100px;
+    }
+
+    img.imgCards02 {
+        max-width: 100px;
+        left: -4%;
+    }
+
+    img.imgCards03 {
+        bottom: -10%;
+        max-width: 210px;
+    }
+
+    nav .nav-item {
+        margin: auto 0px 0 0px;
+    }
+
+    .hambergur {
+        right: 30px;
+    }
+
+    .sectionThree .verticallyCenter .aboutUs {
+        margin-bottom: 40px;
+    }
+
+}
+
+@media screen and (max-width: 991px) {
+
+    .sectionThree .verticallyCenter,
+    .verticallyCenter {
+        transform: translate(0, 0);
+        padding: 30px 10px;
+    }
+
+    .myslider .slick-slide {
+        height: 100% !important;
+    }
+
+    .aboutUs {
+        text-align: center;
+    }
+
+    .globalBtn {
+        margin: auto;
+    }
+
+    .sectionThree .verticallyCenter .aboutUs {
+        margin-bottom: 40px;
+    }
+
+    .currentBanner {
+        display: none;
+    }
+
+    .close {
+        width: 2rem;
+        height: 2rem;
+        right: 20px;
+        top: 60px;
+    }
+
+    .close div:before,
+    .close div:after {
+        width: 15px;
+    }
+
+    .steps {
+        margin-top: 50px;
+    }
+
+    img.imgCards01 {
+        top: 20%;
+    }
+
+    .sectionThree .verticallyCenter,
+    .verticallyCenter {
+        transform: translate(0, 0%) !important;
+    }
+
+    .mainBannerSlider {
+        height: 100%;
+        max-height: 70vh;
+    }
+
+    .mainBannerSlider .mainBannerVideo {
+        min-height: 70vh;
+    }
+
+    /* Services Inner Pages */
+    .amazonDropshipAutomationMainBanner {
+        padding: 100px 0 60px;
+    }
+
+    .servicesFeatured {
+        padding: 50px 0;
+    }
+
+    .footer-big {
+        padding: 30px 0 30px 0;
+    }
+
+    .footer-menu {
+        padding-left: 0
+    }
+}
+
+@media screen and (max-width: 480px) {
+    img.imgCards01 {
+        max-width: 70px;
+    }
+
+    img.imgCards02 {
+        max-width: 50px;
+    }
+
+    img.imgCards03 {
+        max-width: 100px;
+    }
+
+    .mainLogo {
+        margin-bottom: -12px !important;
+    }
+
+    .mainLogo img {
+        width: 80px;
+    }
+
+    img.mainLogoR {
+        max-width: 30px;
+    }
+
+    .mainSectionContent a {
+        bottom: -60px;
+    }
+
+    .box span {
+        border-right: 1px solid;
+        border-bottom: 1px solid;
+        border-image-slice: 1;
+        border-width: 1px;
+        width: 10px;
+        height: 10px;
+    }
+
+    .mainSectionContent {
+        top: 45%;
+        transform: translate(0%, 0%);
+    }
+
+    .mainBannerSocialMedia ul {
+        display: flex;
+    }
+
+    .mainBannerSocialMedia ul li {
+        margin: auto 5px;
+    }
+
+    .mainBannerSocialMedia {
+        left: 49%;
+        bottom: 0;
+        margin: auto;
+        top: 0;
+        transform: translate(-50%, 55%);
+    }
+
+    .mainBannerSocialMedia ul li a {
+        font-size: 0.9rem;
+    }
+
+    .sectionThree .verticallyCenter .aboutUs {
+        margin-bottom: 40px;
+    }
+
+    .testimonialVideos.slick-slide.slick-current.slick-active.slick-center.testimonialVideos iframe {
+        transform: scale(1);
+    }
+
+    /* Services Inner Pages */
+
+    .serviceMainContent h2 {
+        font-size: 1.2rem;
+    }
+
+    .serviceMainContent h3 {
+        font-size: 1.5rem;
+    }
+
+}
+
+@media screen and (max-width: 320px) {
+    .mainBannerSocialMedia {
+        transform: translate(-50%, 55%);
+    }
+
+    .mainSectionContent h2 {
+        font-size: 0.7rem;
+    }
+
+    .mainBannerSocialMedia ul li a {
+        font-size: 0.8rem;
+    }
+
+    .sectionThree .verticallyCenter .aboutUs {
+        margin-bottom: 40px;
+    }
+}
+
+@media screen and (max-height: 768px) {
+
+    .sectionThree .verticallyCenter,
+    .verticallyCenter {
+        transform: translate(0px, 30%);
+    }
+
+    .servicesMainCards {
+        padding: 20px 10px;
+    }
+
+    .servicesCards h5 {
+        font-size: 1rem;
+        margin-bottom: 0;
+    }
+
+    .servicesCards p {
+        margin-bottom: 0;
+        font-size: 0.8rem;
+    }
+
+    .sectionThree .verticallyCenter .aboutUs {
+        margin-bottom: 20px;
+    }
+
+    .sectionFour .verticallyCenter .aboutUs h2 {
+        margin-bottom: 50px;
+    }
+}

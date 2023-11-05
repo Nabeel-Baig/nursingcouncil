@@ -1,0 +1,34 @@
+/* Defines the width of the carousel and centers it on the page */
+.slick-carousel {
+    margin: 0 auto;
+    width: 80%;
+}
+
+/* The width of each slide */
+.slick-slide {
+    width: 350px;
+}
+
+/* Color of the arrows */
+.slick-next::before,
+.slick-prev::before {
+    color: #30515b;
+    font-size: 2rem;
+}
+
+.slick-list {
+    width: 70% !important;
+    margin: auto;
+}
+
+.slick-prev{
+    left: 0 !important;
+}
+
+.slick-next{
+    right: 0 !important;
+}
+
+.slick-slide img{
+    max-height: 300px;
+}

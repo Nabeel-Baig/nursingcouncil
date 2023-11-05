@@ -1,0 +1,1728 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Nov 01, 2022 at 06:31 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `nursing`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cards`
+--
+
+CREATE TABLE `cards` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `page_id` bigint(20) UNSIGNED NOT NULL,
+  `page_card_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `cards`
+--
+
+INSERT INTO `cards` (`id`, `page_id`, `page_card_name`, `created_at`, `updated_at`) VALUES
+(1, 13, 'main cards', NULL, NULL),
+(2, 4, 'main cards', NULL, NULL),
+(3, 7, 'main cards', NULL, NULL),
+(4, 18, 'main cards', NULL, NULL),
+(5, 19, 'main cards', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `card_details`
+--
+
+CREATE TABLE `card_details` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `card_id` bigint(20) UNSIGNED NOT NULL,
+  `card_title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `card_details` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `card_details`
+--
+
+INSERT INTO `card_details` (`id`, `card_id`, `card_title`, `card_details`, `created_at`, `updated_at`) VALUES
+(1, 1, 'Professionalism', 'The Council upholds ethical principles and conducts its business with utmost professionalism. Council matters are kept confidential and only disclosed to appropriate stakeholders as required.', NULL, '2022-10-05 13:41:47'),
+(2, 1, 'Integrity', 'The council conducts its business guided by honesty, fairness, and respect. It operates on reliable evidence for the best possible outcome.\n', NULL, NULL),
+(3, 1, 'Excellence', 'Committed to a high-quality standard, advancement and sustainability of the nursing and midwifery evidenced informed nursing and midwifery practice.\n', NULL, NULL),
+(4, 1, 'Efficiency', 'The Nursing Council keeps current of national, regional, and global standards to ensure its performance is at the cutting edge. 5. Responsiveness - Responds quickly to questions, concerns, or requests of Nursing and Midwifery personnel and the public at large.\n', NULL, NULL),
+(5, 2, 'The Council', 'How our Council works', NULL, NULL),
+(6, 2, 'Council Meetings', 'Agendas and when our meetings take place', NULL, NULL),
+(7, 2, 'Associates\n', 'Who our Associates are', NULL, NULL),
+(8, 2, 'Committees of Council\n', 'The five committees of Council', NULL, NULL),
+(9, 2, 'Members of Council', 'Who our Council members are', NULL, NULL),
+(11, 3, 'Projects we\'re involved in', 'The latest on projects we are part of', '2022-10-06 06:15:19', '2022-10-06 06:15:19'),
+(12, 3, 'Position statements', 'The healthcare environment we work in can change very quickly. Read our point of view on a number of recent issues in the position statements below.', '2022-10-06 06:15:31', '2022-10-06 06:15:31'),
+(13, 3, 'Our responses to consultations', 'We respond to consultations from other organisations', '2022-10-06 06:15:44', '2022-10-06 06:15:44'),
+(14, 4, 'Official correspondents and lead midwives for education', 'More on the roles of these contacts at AEIs', '2022-10-06 06:17:06', '2022-10-06 06:17:06'),
+(15, 4, 'Contact a lead midwife for education', 'Lead midwives for education (LMEs) across the UK', '2022-10-06 06:17:20', '2022-10-06 06:17:20'),
+(16, 4, 'Form for new LMEs', NULL, '2022-10-06 06:19:40', '2022-10-06 06:19:40'),
+(17, 5, 'Becoming a nurse', 'How to become a nurse and find a course in the UK', '2022-10-06 07:24:30', '2022-10-06 07:24:30'),
+(18, 5, 'Becoming a midwife', 'How to become a midwife and find a course in the UK', '2022-10-06 07:24:51', '2022-10-06 07:24:51'),
+(19, 5, 'Becoming a nursing associate', 'How to become a nursing associate and find a course in England', '2022-10-06 07:26:11', '2022-10-06 07:26:11'),
+(20, 5, 'Becoming an apprentice', 'Apprenticeships aren\'t just for school leavers. Find out more about this affordable route into training.', '2022-10-06 07:26:42', '2022-10-06 07:26:42'),
+(21, 5, 'Becoming a prescriber', 'Find out more about the entry requirements for prescribing programmes', '2022-10-06 07:27:21', '2022-10-06 07:27:21'),
+(22, 5, 'Health and character as a student', 'Information on health and character as a student nurse, midwife or nursing associate', '2022-10-06 07:27:40', '2022-10-06 07:27:40'),
+(23, 5, 'Raising concerns as a student', 'How students can raise a concern', '2022-10-06 07:45:14', '2022-10-06 07:45:14'),
+(24, 5, 'After you qualify', NULL, '2022-10-06 07:45:34', '2022-10-06 07:45:34');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `failed_jobs`
+--
+
+CREATE TABLE `failed_jobs` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `uuid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `forms`
+--
+
+CREATE TABLE `forms` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `attachment` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `forms`
+--
+
+INSERT INTO `forms` (`id`, `title`, `description`, `attachment`, `created_at`, `updated_at`) VALUES
+(3, 'title 1 updated', 'description of title one', '/assets/uploads/forms/JEtkxsMLyfakGffhxHfE838w9RmJVjvmZxQVFhMN.docx', NULL, '2022-11-01 23:23:48'),
+(4, 'title 1', 'description of title one', '/assets/uploads/forms/JEtkxsMLyfakGffhxHfE838w9RmJVjvmZxQVFhMN.docx', NULL, NULL),
+(5, 'FDSFS', 'FDSFGSDFSDFDS', '/assets/uploads/forms/JEtkxsMLyfakGffhxHfE838w9RmJVjvmZxQVFhMN.docx', '2022-11-01 22:29:13', '2022-11-01 22:29:13');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `front_setting`
+--
+
+CREATE TABLE `front_setting` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `youtube_link` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `fb_link` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `twitter_link` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `insta_link` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `contact_number` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `contact_email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `location` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `logo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `favicon` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `footer_info` varchar(250) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `front_setting`
+--
+
+INSERT INTO `front_setting` (`id`, `name`, `title`, `youtube_link`, `fb_link`, `twitter_link`, `insta_link`, `contact_number`, `contact_email`, `location`, `logo`, `favicon`, `footer_info`, `created_at`, `updated_at`) VALUES
+(1, 'Nursing Council', 'Nursing Council', 'https://www.youtube.com/', 'https://www.facebook.com/', 'https://twitter.com/', 'https://www.instagram.com/', '000 333 0000', '\ninfo@thenursingcouncil.com', '92 Lorem simply street line New York, USA', '/front_assets/images/logo.png', '/front_assets/images/logo.png', 'There are many variations of passages of lorem ipsum available, but the majority suffered.', NULL, '2022-08-24 07:26:14');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `migrations`
+--
+
+CREATE TABLE `migrations` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `migrations`
+--
+
+INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
+(1, '2010_10_12_000000_create_users_table', 1),
+(2, '2012_06_15_160446_create_brands_table', 1),
+(3, '2014_10_12_100000_create_password_resets_table', 1),
+(4, '2019_08_19_000000_create_failed_jobs_table', 1),
+(5, '2021_06_22_135620_create_roles_table', 1),
+(6, '2021_06_22_162253_create_settings_table', 1),
+(7, '2021_06_22_195058_create_permissions_table', 1),
+(8, '2021_06_22_195149_create_permission_role_pivot_table', 1),
+(9, '2021_06_22_195224_create_role_user_pivot_table', 1),
+(10, '2022_05_15_160540_create_project_categories_table', 1),
+(11, '2022_06_15_160521_create_projects_table', 1),
+(12, '2022_06_24_085706_create_domains_table', 1),
+(13, '2022_07_22_153109_create_lead_comments', 1),
+(14, '2022_08_19_113034_create_development_statuses_table', 2),
+(15, '2022_11_01_143100_create_user_documents_table', 3),
+(16, '2022_11_01_164344_create_user_documents_table', 4);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `news`
+--
+
+CREATE TABLE `news` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `news_title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `news_sub_title` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `news_details` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `news`
+--
+
+INSERT INTO `news` (`id`, `news_title`, `news_sub_title`, `news_details`, `created_at`, `updated_at`) VALUES
+(43, 'We’ve updated our visual identity', 'Our visual identity covers everything you see from the NMC – from our colours and typeface to our photography, animation style and of course our logo.', '<p>asdads66</p>', '2022-08-23 13:29:32', '2022-08-23 13:29:32'),
+(44, 'NMC seeks senior registrant for executive director role', 'Read more below.', '<p>detail for news&nbsp;</p>', '2022-08-24 09:28:51', '2022-08-24 09:29:16'),
+(45, 'NMC launches consultation on education programme standards', 'This consultation will give everyone the opportunity to have their say on proposed changes to our education programme standards. The consultation will run for 1', '<p>asdads66</p>', '2022-08-23 13:29:32', '2022-08-23 13:29:32'),
+(46, 'New post-registration standards will help deliver modern, effective community care', 'Our new standards will benefit people and their wider communities.', '<p>detail for news&nbsp;</p>', '2022-08-24 09:28:51', '2022-08-24 09:29:16'),
+(47, 'Geraldine Walters to step down as NMC Executive Director of Professional Practice', 'Professor Geraldine Walters CBE will leave her role as NMC Executive Director of Professional Practice in November, following an exceptional career in practice,', '<p>asdads66</p>', '2022-08-23 13:29:32', '2022-08-23 13:29:32'),
+(48, 'Nurses among health and care professionals who can now certify fit notes', 'From today, registered nurses, occupational therapists, pharmacists, and physiotherapists can legally certify fit notes for people who need them.', '<p>detail for news&nbsp;</p>', '2022-08-24 09:28:51', '2022-08-24 09:29:16');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pages`
+--
+
+CREATE TABLE `pages` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `page_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `pages`
+--
+
+INSERT INTO `pages` (`id`, `page_name`, `created_at`, `updated_at`) VALUES
+(1, 'home', NULL, NULL),
+(3, 'career', '2022-08-25 13:36:51', '2022-08-25 13:36:51'),
+(4, 'governance', '2022-08-26 13:05:16', '2022-08-26 13:05:16'),
+(5, 'careers', '2022-08-29 15:25:04', '2022-08-29 15:25:04'),
+(6, 'who-we-work-with', '2022-08-29 15:41:31', '2022-08-29 15:41:31'),
+(7, 'policy', '2022-08-29 15:44:34', '2022-08-29 15:44:34'),
+(8, 'the_code', '2022-08-29 15:54:58', '2022-08-29 15:54:58'),
+(9, 'standards-for-nurses', '2022-08-29 15:57:45', '2022-08-29 15:57:45'),
+(11, 'standards-for-midwives', '2022-08-29 16:41:03', '2022-08-29 16:41:03'),
+(12, 'standards-for-nursing-associates', '2022-08-29 16:41:03', '2022-08-29 16:41:03'),
+(13, 'what-we-do', '2022-08-29 18:53:03', '2022-08-29 18:53:03'),
+(14, 'revalidation', '2022-08-29 18:54:09', '2022-08-29 18:54:09'),
+(15, 'our-role-in-education', '2022-08-29 18:56:13', '2022-08-29 18:56:13'),
+(16, 'approved-programmes', '2022-08-29 19:05:13', '2022-08-29 19:05:13'),
+(17, 'events', NULL, NULL),
+(18, 'contacts-of-education-institutions', '2022-08-29 19:05:13', '2022-08-29 19:05:13'),
+(19, 'becoming-a-nurse-midwife-nursing-associate', '2022-08-29 19:05:13', '2022-08-29 19:05:13');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pages_contents`
+--
+
+CREATE TABLE `pages_contents` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `page_id` bigint(20) UNSIGNED NOT NULL,
+  `page_content` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `pages_contents`
+--
+
+INSERT INTO `pages_contents` (`id`, `page_id`, `page_content`, `created_at`, `updated_at`) VALUES
+(1, 13, '<p style=\"font-family: Rajdhani, sans-serif; font-size: 18px; color: rgb(33, 37, 41);\">Our vision is safe, effective and kind nursing and midwifery that improves everyone’s health and wellbeing.</p><p style=\"font-family: Rajdhani, sans-serif; font-size: 18px; color: rgb(33, 37, 41);\">As the independent regulator of more than 758,000 nursing and midwifery professionals, we have an important role to play in making this a reality.</p><p style=\"font-family: Rajdhani, sans-serif; font-size: 18px; color: rgb(33, 37, 41);\">Our core role is to&nbsp;<span style=\"font-weight: bolder;\">regulate</span>. First, we promote high education and professional standards for nurses and midwives across the UK, and nursing associates in England. Second, we maintain the register of professionals eligible to practise. Third, we investigate concerns about nurses, midwives and nursing associates – something that affects less than one percent of professionals each year. We believe in giving professionals the chance to address concerns, but we’ll always take action when needed.</p><p style=\"font-family: Rajdhani, sans-serif; font-size: 18px; color: rgb(33, 37, 41);\">To regulate well, we&nbsp;<span style=\"font-weight: bolder;\">support</span>&nbsp;our professions and the public. We create resources and guidance that are useful throughout people’s careers, helping them to deliver our standards in practice and address new challenges. We also support people involved in our investigations, and we’re increasing our visibility so people feel engaged and empowered to shape our work.</p><p style=\"font-family: Rajdhani, sans-serif; font-size: 18px; color: rgb(33, 37, 41);\">Regulating and supporting our professions allows us to&nbsp;<span style=\"font-weight: bolder;\">influence</span>&nbsp;health and social care. We share intelligence from our regulatory activities and work with our partners to support workforce planning and sector-wide decision making. We use our voice to speak up for a healthy and inclusive working environment for our professions.</p>', NULL, '2022-09-01 23:57:18'),
+(2, 14, '<h4 style=\"font-family: Rajdhani, sans-serif; font-size: 1.5rem; color: rgb(33, 37, 41);\">Our revalidation materials have moved</h4><p style=\"font-family: Rajdhani, sans-serif; font-size: 18px; color: rgb(33, 37, 41);\">We\'ve moved our guidance, documents and templates for revalidation to this dedicated area of our website. The guidance has not changed and the process is the same, so you can continue to revalidate as normal.</p><h4 style=\"font-family: Rajdhani, sans-serif; font-size: 1.5rem; color: rgb(33, 37, 41);\">How to revalidate during Covid-19</h4><p style=\"font-family: Rajdhani, sans-serif; font-size: 18px; color: rgb(33, 37, 41);\">We\'ve put some measures in place to support you to meet your revalidation requirements during the Covid-19 pandemic.&nbsp;<a style=\"color: rgb(13, 110, 253); text-decoration-line: underline;\">Visit our Covid-19: Revalidation page</a>&nbsp;for information including details of revalidation deadline extensions.</p>', NULL, NULL),
+(3, 9, '<p><span style=\"color: rgb(33, 37, 41); font-family: Rajdhani, sans-serif; font-size: 18px;\">In response to the ongoing Covid-19 situation, we’ve produced&nbsp;</span><a style=\"font-family: Rajdhani, sans-serif; color: rgb(13, 110, 253); text-decoration-line: underline; font-size: 18px;\">recovery and emergency education programme standards</a><span style=\"color: rgb(33, 37, 41); font-family: Rajdhani, sans-serif; font-size: 18px;\">&nbsp;to enable our approved education institutions (AEIs) and their practice learning partners to support all of their nursing and midwifery students in an appropriate way</span><br></p>', NULL, NULL),
+(4, 11, '<p><span style=\"color: rgb(33, 37, 41); font-family: Rajdhani, sans-serif; font-size: 18px;\">In response to the ongoing Covid-19 situation, we’ve produced&nbsp;</span><a style=\"font-family: Rajdhani, sans-serif; color: rgb(13, 110, 253); text-decoration-line: underline; font-size: 18px;\">recovery and emergency education programme standards</a><span style=\"color: rgb(33, 37, 41); font-family: Rajdhani, sans-serif; font-size: 18px;\">&nbsp;to enable our approved education institutions (AEIs) and their practice learning partners to support all of their nursing and midwifery students in an appropriate way.</span><br></p>', NULL, NULL),
+(5, 12, '<p><span style=\"color: rgb(33, 37, 41); font-family: Rajdhani, sans-serif; font-size: 18px;\">In response to the ongoing Covid-19 situation, we’ve produced&nbsp;</span><a style=\"font-family: Rajdhani, sans-serif; color: rgb(13, 110, 253); text-decoration-line: underline; font-size: 18px;\">recovery and emergency education programme standards</a><span style=\"color: rgb(33, 37, 41); font-family: Rajdhani, sans-serif; font-size: 18px;\">&nbsp;to enable our approved education institutions (AEIs) and their practice learning partners to support all of their nursing and midwifery students in an appropriate way.</span><br></p>', NULL, NULL),
+(6, 15, '<h3 style=\"font-family: Rajdhani, sans-serif; font-size: 1.75rem; color: rgb(33, 37, 41);\">Our role in education</h3><p style=\"font-family: Rajdhani, sans-serif; font-size: 18px; color: rgb(33, 37, 41);\">We want to make sure that nurses, midwives and nursing associates are consistently educated to a high standard, so that they are able to deliver safe and effective care at the point of entry to the register and throughout their careers. We also want to make sure that patients, service users and the public have a clear understanding of what nurses, midwives and nursing associates know and are competent to do.</p><p style=\"font-family: Rajdhani, sans-serif; font-size: 18px; color: rgb(33, 37, 41);\">We are committed to delivering a&nbsp;<a class=\"defaultLink\" style=\"color: rgb(46, 72, 177); text-decoration-line: underline; transition: all 0.3s linear 0s;\">programme of change for education</a>&nbsp;between 2016 and 2020, to modernise education standards and ensure that nurses, midwives and nursing associates are equipped with the skills and knowledge they need to practise now and in the future.</p><h3 style=\"font-family: Rajdhani, sans-serif; font-size: 1.75rem; color: rgb(33, 37, 41);\">What we do</h3><ul style=\"font-family: Rajdhani, sans-serif; color: rgb(33, 37, 41); font-size: 16px;\"><li style=\"font-size: 18px;\">We set education standards, which shape the content and design of programmes and state the competences of a nurse, midwife or nursing associate.</li><li style=\"font-size: 18px;\">We approve education institutions and programmes and maintain a database of approved programmes (courses).</li><li style=\"font-size: 18px;\">We deliver&nbsp;<a class=\"defaultLink\" style=\"color: rgb(46, 72, 177); text-decoration-line: underline; transition: all 0.3s linear 0s;\">quality assurance</a>&nbsp;of our approved programmes.</li><li style=\"font-size: 18px;\">We register nurses, midwives and nursing associates when they have successfully completed their courses.</li><li style=\"font-size: 18px;\">We assess and ensure the quality of practice placements for students.</li></ul><h3 style=\"font-family: Rajdhani, sans-serif; font-size: 1.75rem; color: rgb(33, 37, 41);\">What we don\'t do</h3><ul style=\"font-family: Rajdhani, sans-serif; color: rgb(33, 37, 41); font-size: 16px;\"><li style=\"font-size: 18px;\">We don\'t educate or select students. This is done by the approved education institutions (AEIs) and practice partners in line with our standards.</li><li style=\"font-size: 18px;\">We don\'t set curricula. This is done by the AEIs and practice partners in line with our standards.</li><li style=\"font-size: 18px;\">We don\'t regulate students. If there are concerns about a student, this is dealt with by the AEI.</li><li style=\"font-size: 18px;\">We don\'t assess the ability of practice settings to support students\' learning. This is done by AEIs.</li><li style=\"font-size: 18px;\">We don\'t assess the quality of care in hospitals or the community. This is the responsibility of other regulators: the Care Quality Commission in England, Healthcare Improvement Scotland, Healthcare Inspectorate Wales and Northern Ireland\'s Regulation and Quality Improvement Authority.</li></ul>', NULL, NULL),
+(7, 16, '<p style=\"font-family: Rajdhani, sans-serif; color: rgb(33, 37, 41); font-size: 16px;\"><span style=\"font-weight: bolder;\">Programmes the tool covers</span></p><p style=\"font-family: Rajdhani, sans-serif; color: rgb(33, 37, 41); font-size: 16px;\">This tool shows programmes that offer a formal qualification from our approved education providers. There are separate arrangements for nursing associate education programmes. Find out more about&nbsp;<a class=\"defaultLink\" style=\"color: rgb(46, 72, 177); text-decoration-line: underline; transition: all 0.3s linear 0s;\">becoming a nursing associate</a></p><p style=\"font-family: Rajdhani, sans-serif; color: rgb(33, 37, 41); font-size: 16px;\"><span style=\"font-weight: bolder;\">Getting the most out of your search</span></p><p style=\"font-family: Rajdhani, sans-serif; color: rgb(33, 37, 41); font-size: 16px;\">If you search only by country, you’ll receive a large number of results. You should also try searching by the course or approved education institution criteria.</p><p style=\"font-family: Rajdhani, sans-serif; color: rgb(33, 37, 41); font-size: 16px;\"><span style=\"font-weight: bolder;\">Non-NMC approved courses</span></p><p style=\"font-family: Rajdhani, sans-serif; color: rgb(33, 37, 41); font-size: 16px;\">We\'ve been made aware of a number of non NMC approved ‘nursing diploma’ courses being offered on various external websites. Please be aware that these courses do not contribute to a formal qualification from our approved education providers and will not lead to registration with us.</p><p style=\"font-family: Rajdhani, sans-serif; color: rgb(33, 37, 41); font-size: 16px;\"><span style=\"font-weight: bolder;\">Compliance with our standards</span></p><p style=\"font-family: Rajdhani, sans-serif; color: rgb(33, 37, 41); font-size: 16px;\">The \'compliant with standards post-2018\' column indicates whether or not a programme has been approved against the new standards for education and training. If it says ‘no’ in this column, this programme has not yet been approved against our new standards and has only been approved against our pre-2018 standards. Pre-2018 standards will remain in use until 1 September 2020.</p><p style=\"font-family: Rajdhani, sans-serif; color: rgb(33, 37, 41); font-size: 16px;\"><span style=\"font-weight: bolder;\">Fall back awards</span></p><p style=\"font-family: Rajdhani, sans-serif; color: rgb(33, 37, 41); font-size: 16px;\">Please note that any approved programmes that contain “fall back award” within the programme title, are not direct entry routes i.e. students cannot enrol onto these courses.</p>', NULL, NULL),
+(8, 17, '<p style=\"font-family: Rajdhani, sans-serif; font-size: 18px; color: rgb(33, 37, 41);\">In line with government advice around Covid-19, we have decided to cancel our upcoming face to face events until further notice.</p><p style=\"font-family: Rajdhani, sans-serif; font-size: 18px; color: rgb(33, 37, 41);\">Thanks for your patience and understanding at this time.</p><h3 style=\"font-family: Rajdhani, sans-serif; font-size: 1.75rem; color: rgb(33, 37, 41);\">Request a speaker</h3><p style=\"font-family: Rajdhani, sans-serif; font-size: 18px; color: rgb(33, 37, 41);\">If you would like us to attend, exhibit or speak at an event you are organising, please contact&nbsp;<a href=\"mailto:events@nmc-uk.org\" class=\"defaultLink\" style=\"color: rgb(46, 72, 177); text-decoration-line: underline; transition: all 0.3s linear 0s;\">events@nmc-uk.org</a>.</p><h3 style=\"font-family: Rajdhani, sans-serif; font-size: 1.75rem; color: rgb(33, 37, 41);\">Council meetings</h3><p style=\"font-family: Rajdhani, sans-serif; font-size: 18px; color: rgb(33, 37, 41);\">The Council meets in public six times a year. Anyone is welcome to observe a Council meeting, however space is limited so please request a place in advance.<br><a class=\"defaultLink\" style=\"color: rgb(46, 72, 177); text-decoration-line: underline; transition: all 0.3s linear 0s;\">Book to attend a Council meeting</a></p><h3 style=\"font-family: Rajdhani, sans-serif; font-size: 1.75rem; color: rgb(33, 37, 41);\">Webinars</h3><p style=\"font-family: Rajdhani, sans-serif; font-size: 18px; color: rgb(33, 37, 41);\">Find out more about our recent webinars:</p>', NULL, '2022-08-31 10:47:15');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `page_introductions`
+--
+
+CREATE TABLE `page_introductions` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `page_id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `sub_title` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `detail` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `link` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` varchar(250) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `page_introductions`
+--
+
+INSERT INTO `page_introductions` (`id`, `page_id`, `title`, `sub_title`, `detail`, `link`, `image`, `created_at`, `updated_at`) VALUES
+(1, 1, 'WHO WE ARE AND WHAT WE DO', '<span style=\"color: rgb(123, 131, 145); font-family: Rajdhani, sans-serif; font-size: 16px; font-style: italic;\">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</span>', '<span style=\"color: rgb(123, 131, 145); font-family: Rajdhani, sans-serif; font-size: 16px;\">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</span>', '#', '/assets/uploads/page-info/deFUOH2wiUUJyZA6lf3lT5nkkMaCLmr7e7mtGOOs.png', NULL, '2022-10-06 10:06:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `password_resets`
+--
+
+CREATE TABLE `password_resets` (
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `permissions`
+--
+
+CREATE TABLE `permissions` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `permissions`
+--
+
+INSERT INTO `permissions` (`id`, `title`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'user_management_access', '2019-09-27 02:11:07', '2019-09-27 02:11:07', NULL),
+(2, 'permission_create', '2019-09-27 02:11:07', '2019-09-27 02:11:07', NULL),
+(3, 'permission_edit', '2019-09-27 02:11:07', '2019-09-27 02:11:07', NULL),
+(4, 'permission_show', '2019-09-27 02:11:07', '2019-09-27 02:11:07', NULL),
+(5, 'permission_delete', '2019-09-27 02:11:07', '2019-09-27 02:11:07', NULL),
+(6, 'permission_access', '2019-09-27 02:11:07', '2019-09-27 02:11:07', NULL),
+(7, 'role_create', '2019-09-27 02:11:07', '2019-09-27 02:11:07', NULL),
+(8, 'role_edit', '2019-09-27 02:11:07', '2019-09-27 02:11:07', NULL),
+(9, 'role_show', '2019-09-27 02:11:07', '2019-09-27 02:11:07', NULL),
+(10, 'role_delete', '2019-09-27 02:11:07', '2019-09-27 02:11:07', NULL),
+(11, 'role_access', '2019-09-27 02:11:07', '2019-09-27 02:11:07', NULL),
+(12, 'user_create', '2019-09-27 02:11:07', '2019-09-27 02:11:07', NULL),
+(13, 'user_edit', '2019-09-27 02:11:07', '2019-09-27 02:11:07', NULL),
+(14, 'user_show', '2019-09-27 02:11:07', '2019-09-27 02:11:07', NULL),
+(15, 'user_delete', '2019-09-27 02:11:07', '2019-09-27 02:11:07', NULL),
+(16, 'user_access', '2019-09-27 02:11:07', '2019-09-27 02:11:07', NULL),
+(17, 'setting_edit', '2019-09-27 02:11:07', '2019-09-27 02:11:07', NULL),
+(18, 'category_create', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(19, 'category_edit', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(20, 'category_show', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(21, 'category_delete', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(22, 'category_access', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(23, 'fund_create', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(24, 'fund_edit', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(25, 'fund_show', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(26, 'fund_delete', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(27, 'fund_access', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(28, 'users_access', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(29, 'admin_access', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(30, 'order_create', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(31, 'order_edit', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(32, 'order_show', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(33, 'order_delete', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(34, 'order_access', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(35, 'payment_access', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(36, 'payment_show', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(37, 'payment_delete', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(38, 'brand_access', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(39, 'brand_delete', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(40, 'brand_show', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(41, 'brand_create', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(42, 'brand_edit', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(43, 'brand_edit', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(44, 'project_type_access', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(45, 'project_type_create', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(46, 'project_type_create', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(47, 'project_type_edit', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(48, 'project_type_show', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(49, 'client_access', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(50, 'client_show', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(51, 'client_edit', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(52, 'client_update', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(53, 'client_delete', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(54, 'project_type_delete', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(55, 'client_create', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(56, 'project_access', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(57, 'project_show', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(58, 'project_edit', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(59, 'project_create', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(60, 'project_update', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(61, 'project_delete', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(62, 'lead_show', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(63, 'lead_delete', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(64, 'lead_create', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(65, 'lead_edit', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(66, 'lead_access', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(67, 'lead_management_access', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(68, 'sub_lead_access', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(69, 'open_lead_access', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(70, 'domain_access', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(71, 'domain_delete', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(72, 'domain_create', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(73, 'domain_edit', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(74, 'domain_update', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(75, 'sub_lead_view', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(76, 'sub_lead_create', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(78, 'sub_lead_delete', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(79, 'sub_lead_show', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(80, 'sub_lead_edit', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(81, 'resource_lead_set', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(82, 'lead_personal_management_access', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(83, 'personal_lead_access', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(84, 'sales_resource_assigned_lead_access', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(85, 'assigned_lead_access', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(86, 'personal_lead_delete', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(87, 'personal_lead_show', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(88, 'personal_lead_create', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(89, 'personal_lead_edit', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(90, 'lead_view_personal_sub_lead_access', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(91, 'paid_lead_access', '2019-09-27 02:11:07', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(92, 'project_lead_show', '2022-08-05 06:59:46', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(93, 'lead_project_show', '2022-08-10 09:45:15', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(94, 'lead_resource_show', '2022-08-10 09:45:21', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(95, 'lead_resource_set', '2022-08-10 09:45:26', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(96, 'lead_project_show', '2022-08-10 13:24:00', '2022-08-10 13:24:45', '2022-08-10 13:24:45'),
+(97, 'development_status_access', '2022-08-19 07:01:44', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(98, 'development_status_show', '2022-08-19 08:13:59', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(99, 'development_status_delete', '2022-08-19 08:14:06', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(100, 'development_status_create', '2022-08-19 08:14:10', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(101, 'development_status_show', '2022-08-19 08:17:08', '2022-08-19 08:17:48', '2022-08-19 08:17:48'),
+(102, 'development_status_edit', '2022-08-19 08:17:52', '2022-11-01 08:26:49', '2022-11-01 08:26:49'),
+(103, 'development_status_update', '2022-08-19 09:49:53', '2022-11-01 08:26:49', '2022-11-01 08:26:49');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `permission_role`
+--
+
+CREATE TABLE `permission_role` (
+  `role_id` bigint(20) UNSIGNED NOT NULL,
+  `permission_id` bigint(20) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `permission_role`
+--
+
+INSERT INTO `permission_role` (`role_id`, `permission_id`) VALUES
+(1, 1),
+(1, 2),
+(1, 3),
+(1, 4),
+(1, 5),
+(1, 6),
+(1, 7),
+(1, 8),
+(1, 9),
+(1, 10),
+(1, 11),
+(1, 12),
+(1, 13),
+(1, 14),
+(1, 15),
+(1, 16),
+(1, 17),
+(1, 18),
+(1, 19),
+(1, 20),
+(1, 21),
+(1, 22),
+(1, 23),
+(1, 24),
+(1, 25),
+(1, 26),
+(1, 27),
+(1, 28),
+(1, 29),
+(1, 30),
+(1, 31),
+(1, 32),
+(1, 33),
+(1, 34),
+(1, 35),
+(1, 36),
+(1, 37),
+(1, 38),
+(1, 39),
+(1, 40),
+(1, 41),
+(1, 42),
+(1, 43),
+(1, 44),
+(1, 45),
+(1, 46),
+(1, 47),
+(1, 48),
+(1, 49),
+(1, 50),
+(1, 51),
+(1, 52),
+(1, 53),
+(1, 54),
+(1, 55),
+(1, 56),
+(1, 57),
+(1, 58),
+(1, 59),
+(1, 60),
+(1, 61),
+(1, 62),
+(1, 63),
+(1, 64),
+(1, 65),
+(1, 66),
+(1, 67),
+(1, 68),
+(1, 69),
+(1, 70),
+(1, 71),
+(1, 72),
+(1, 73),
+(1, 74),
+(1, 75),
+(1, 76),
+(1, 78),
+(1, 79),
+(1, 80),
+(1, 81),
+(1, 83),
+(1, 84),
+(1, 85),
+(1, 86),
+(1, 87),
+(1, 88),
+(1, 89),
+(1, 91),
+(2, 12),
+(2, 13),
+(2, 14),
+(2, 15),
+(2, 16),
+(2, 17),
+(2, 18),
+(2, 19),
+(2, 20),
+(2, 21),
+(2, 22),
+(2, 23),
+(2, 24),
+(2, 25),
+(2, 26),
+(2, 27),
+(2, 29),
+(2, 30),
+(2, 31),
+(2, 32),
+(2, 33),
+(2, 34),
+(2, 35),
+(2, 36),
+(2, 37),
+(2, 38),
+(2, 39),
+(2, 40),
+(2, 41),
+(2, 42),
+(2, 43),
+(2, 44),
+(2, 45),
+(2, 46),
+(2, 47),
+(2, 48),
+(2, 49),
+(2, 50),
+(2, 51),
+(2, 52),
+(2, 53),
+(2, 54),
+(2, 55),
+(2, 56),
+(2, 57),
+(2, 58),
+(2, 59),
+(2, 60),
+(2, 61),
+(2, 62),
+(2, 63),
+(2, 64),
+(2, 65),
+(2, 66),
+(2, 67),
+(2, 68),
+(2, 69),
+(2, 70),
+(2, 71),
+(2, 72),
+(2, 73),
+(2, 74),
+(2, 75),
+(2, 76),
+(2, 78),
+(2, 79),
+(2, 80),
+(2, 81),
+(2, 82),
+(2, 83),
+(2, 84),
+(2, 85),
+(2, 86),
+(2, 87),
+(2, 88),
+(2, 89),
+(2, 90),
+(2, 91),
+(7, 67),
+(7, 85),
+(7, 62),
+(5, 56),
+(2, 92),
+(1, 92),
+(1, 95),
+(1, 94),
+(1, 93),
+(7, 66),
+(1, 97),
+(1, 100),
+(1, 99),
+(1, 98),
+(1, 102),
+(1, 103),
+(1, 1),
+(1, 2),
+(1, 3),
+(1, 4),
+(1, 5),
+(1, 6),
+(1, 7),
+(1, 8),
+(1, 9),
+(1, 10),
+(1, 11),
+(1, 12),
+(1, 13),
+(1, 14),
+(1, 15),
+(1, 16),
+(1, 17),
+(1, 18),
+(1, 19),
+(1, 20),
+(1, 21),
+(1, 22),
+(1, 23),
+(1, 24),
+(1, 25),
+(1, 26),
+(1, 27),
+(1, 28),
+(1, 29),
+(1, 30),
+(1, 31),
+(1, 32),
+(1, 33),
+(1, 34),
+(1, 35),
+(1, 36),
+(1, 37),
+(1, 38),
+(1, 39),
+(1, 40),
+(1, 41),
+(1, 42),
+(1, 43),
+(1, 44),
+(1, 45),
+(1, 46),
+(1, 47),
+(1, 48),
+(1, 49),
+(1, 50),
+(1, 51),
+(1, 52),
+(1, 53),
+(1, 54),
+(1, 55),
+(1, 56),
+(1, 57),
+(1, 58),
+(1, 59),
+(1, 60),
+(1, 61),
+(1, 62),
+(1, 63),
+(1, 64),
+(1, 65),
+(1, 66),
+(1, 67),
+(1, 68),
+(1, 69),
+(1, 70),
+(1, 71),
+(1, 72),
+(1, 73),
+(1, 74),
+(1, 75),
+(1, 76),
+(1, 78),
+(1, 79),
+(1, 80),
+(1, 81),
+(1, 83),
+(1, 84),
+(1, 85),
+(1, 86),
+(1, 87),
+(1, 88),
+(1, 89),
+(1, 91),
+(2, 12),
+(2, 13),
+(2, 14),
+(2, 15),
+(2, 16),
+(2, 17),
+(2, 18),
+(2, 19),
+(2, 20),
+(2, 21),
+(2, 22),
+(2, 23),
+(2, 24),
+(2, 25),
+(2, 26),
+(2, 27),
+(2, 29),
+(2, 30),
+(2, 31),
+(2, 32),
+(2, 33),
+(2, 34),
+(2, 35),
+(2, 36),
+(2, 37),
+(2, 38),
+(2, 39),
+(2, 40),
+(2, 41),
+(2, 42),
+(2, 43),
+(2, 44),
+(2, 45),
+(2, 46),
+(2, 47),
+(2, 48),
+(2, 49),
+(2, 50),
+(2, 51),
+(2, 52),
+(2, 53),
+(2, 54),
+(2, 55),
+(2, 56),
+(2, 57),
+(2, 58),
+(2, 59),
+(2, 60),
+(2, 61),
+(2, 62),
+(2, 63),
+(2, 64),
+(2, 65),
+(2, 66),
+(2, 67),
+(2, 68),
+(2, 69),
+(2, 70),
+(2, 71),
+(2, 72),
+(2, 73),
+(2, 74),
+(2, 75),
+(2, 76),
+(2, 78),
+(2, 79),
+(2, 80),
+(2, 81),
+(2, 82),
+(2, 83),
+(2, 84),
+(2, 85),
+(2, 86),
+(2, 87),
+(2, 88),
+(2, 89),
+(2, 90),
+(2, 91),
+(7, 67),
+(7, 85),
+(7, 62),
+(5, 56),
+(2, 92),
+(1, 92),
+(1, 95),
+(1, 94),
+(1, 93),
+(7, 66),
+(1, 97),
+(1, 100),
+(1, 99),
+(1, 98),
+(1, 102),
+(1, 103),
+(1, 1),
+(1, 2),
+(1, 3),
+(1, 4),
+(1, 5),
+(1, 6),
+(1, 7),
+(1, 8),
+(1, 9),
+(1, 10),
+(1, 11),
+(1, 12),
+(1, 13),
+(1, 14),
+(1, 15),
+(1, 16),
+(1, 17),
+(1, 18),
+(1, 19),
+(1, 20),
+(1, 21),
+(1, 22),
+(1, 23),
+(1, 24),
+(1, 25),
+(1, 26),
+(1, 27),
+(1, 28),
+(1, 29),
+(1, 30),
+(1, 31),
+(1, 32),
+(1, 33),
+(1, 34),
+(1, 35),
+(1, 36),
+(1, 37),
+(1, 38),
+(1, 39),
+(1, 40),
+(1, 41),
+(1, 42),
+(1, 43),
+(1, 44),
+(1, 45),
+(1, 46),
+(1, 47),
+(1, 48),
+(1, 49),
+(1, 50),
+(1, 51),
+(1, 52),
+(1, 53),
+(1, 54),
+(1, 55),
+(1, 56),
+(1, 57),
+(1, 58),
+(1, 59),
+(1, 60),
+(1, 61),
+(1, 62),
+(1, 63),
+(1, 64),
+(1, 65),
+(1, 66),
+(1, 67),
+(1, 68),
+(1, 69),
+(1, 70),
+(1, 71),
+(1, 72),
+(1, 73),
+(1, 74),
+(1, 75),
+(1, 76),
+(1, 78),
+(1, 79),
+(1, 80),
+(1, 81),
+(1, 83),
+(1, 84),
+(1, 85),
+(1, 86),
+(1, 87),
+(1, 88),
+(1, 89),
+(1, 91),
+(2, 12),
+(2, 13),
+(2, 14),
+(2, 15),
+(2, 16),
+(2, 17),
+(2, 18),
+(2, 19),
+(2, 20),
+(2, 21),
+(2, 22),
+(2, 23),
+(2, 24),
+(2, 25),
+(2, 26),
+(2, 27),
+(2, 29),
+(2, 30),
+(2, 31),
+(2, 32),
+(2, 33),
+(2, 34),
+(2, 35),
+(2, 36),
+(2, 37),
+(2, 38),
+(2, 39),
+(2, 40),
+(2, 41),
+(2, 42),
+(2, 43),
+(2, 44),
+(2, 45),
+(2, 46),
+(2, 47),
+(2, 48),
+(2, 49),
+(2, 50),
+(2, 51),
+(2, 52),
+(2, 53),
+(2, 54),
+(2, 55),
+(2, 56),
+(2, 57),
+(2, 58),
+(2, 59),
+(2, 60),
+(2, 61),
+(2, 62),
+(2, 63),
+(2, 64),
+(2, 65),
+(2, 66),
+(2, 67),
+(2, 68),
+(2, 69),
+(2, 70),
+(2, 71),
+(2, 72),
+(2, 73),
+(2, 74),
+(2, 75),
+(2, 76),
+(2, 78),
+(2, 79),
+(2, 80),
+(2, 81),
+(2, 82),
+(2, 83),
+(2, 84),
+(2, 85),
+(2, 86),
+(2, 87),
+(2, 88),
+(2, 89),
+(2, 90),
+(2, 91),
+(7, 67),
+(7, 85),
+(7, 62),
+(5, 56),
+(2, 92),
+(1, 92),
+(1, 95),
+(1, 94),
+(1, 93),
+(7, 66),
+(1, 97),
+(1, 100),
+(1, 99),
+(1, 98),
+(1, 102),
+(1, 103),
+(1, 1),
+(1, 2),
+(1, 3),
+(1, 4),
+(1, 5),
+(1, 6),
+(1, 7),
+(1, 8),
+(1, 9),
+(1, 10),
+(1, 11),
+(1, 12),
+(1, 13),
+(1, 14),
+(1, 15),
+(1, 16),
+(1, 17),
+(1, 18),
+(1, 19),
+(1, 20),
+(1, 21),
+(1, 22),
+(1, 23),
+(1, 24),
+(1, 25),
+(1, 26),
+(1, 27),
+(1, 28),
+(1, 29),
+(1, 30),
+(1, 31),
+(1, 32),
+(1, 33),
+(1, 34),
+(1, 35),
+(1, 36),
+(1, 37),
+(1, 38),
+(1, 39),
+(1, 40),
+(1, 41),
+(1, 42),
+(1, 43),
+(1, 44),
+(1, 45),
+(1, 46),
+(1, 47),
+(1, 48),
+(1, 49),
+(1, 50),
+(1, 51),
+(1, 52),
+(1, 53),
+(1, 54),
+(1, 55),
+(1, 56),
+(1, 57),
+(1, 58),
+(1, 59),
+(1, 60),
+(1, 61),
+(1, 62),
+(1, 63),
+(1, 64),
+(1, 65),
+(1, 66),
+(1, 67),
+(1, 68),
+(1, 69),
+(1, 70),
+(1, 71),
+(1, 72),
+(1, 73),
+(1, 74),
+(1, 75),
+(1, 76),
+(1, 78),
+(1, 79),
+(1, 80),
+(1, 81),
+(1, 83),
+(1, 84),
+(1, 85),
+(1, 86),
+(1, 87),
+(1, 88),
+(1, 89),
+(1, 91),
+(2, 12),
+(2, 13),
+(2, 14),
+(2, 15),
+(2, 16),
+(2, 17),
+(2, 18),
+(2, 19),
+(2, 20),
+(2, 21),
+(2, 22),
+(2, 23),
+(2, 24),
+(2, 25),
+(2, 26),
+(2, 27),
+(2, 29),
+(2, 30),
+(2, 31),
+(2, 32),
+(2, 33),
+(2, 34),
+(2, 35),
+(2, 36),
+(2, 37),
+(2, 38),
+(2, 39),
+(2, 40),
+(2, 41),
+(2, 42),
+(2, 43),
+(2, 44),
+(2, 45),
+(2, 46),
+(2, 47),
+(2, 48),
+(2, 49),
+(2, 50),
+(2, 51),
+(2, 52),
+(2, 53),
+(2, 54),
+(2, 55),
+(2, 56),
+(2, 57),
+(2, 58),
+(2, 59),
+(2, 60),
+(2, 61),
+(2, 62),
+(2, 63),
+(2, 64),
+(2, 65),
+(2, 66),
+(2, 67),
+(2, 68),
+(2, 69),
+(2, 70),
+(2, 71),
+(2, 72),
+(2, 73),
+(2, 74),
+(2, 75),
+(2, 76),
+(2, 78),
+(2, 79),
+(2, 80),
+(2, 81),
+(2, 82),
+(2, 83),
+(2, 84),
+(2, 85),
+(2, 86),
+(2, 87),
+(2, 88),
+(2, 89),
+(2, 90),
+(2, 91),
+(7, 67),
+(7, 85),
+(7, 62),
+(5, 56),
+(2, 92),
+(1, 92),
+(1, 95),
+(1, 94),
+(1, 93),
+(7, 66),
+(1, 97),
+(1, 100),
+(1, 99),
+(1, 98),
+(1, 102),
+(1, 103),
+(4, 29);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `roles`
+--
+
+CREATE TABLE `roles` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `roles`
+--
+
+INSERT INTO `roles` (`id`, `title`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'Master Admin', '2019-09-27 02:11:07', '2019-09-27 02:11:07', NULL),
+(2, 'Admin', '2019-09-27 02:11:07', '2019-09-27 02:11:07', NULL),
+(3, 'User', '2019-09-27 02:11:07', '2019-09-27 02:11:07', NULL),
+(4, 'Nurse', '2019-09-27 02:11:07', '2022-11-01 08:25:32', NULL),
+(5, 'Sub Lead', '2019-09-27 02:11:07', '2022-11-01 08:24:54', '2022-11-01 08:24:54'),
+(6, 'Project Manager', '2019-09-27 02:11:07', '2022-11-01 08:24:54', '2022-11-01 08:24:54'),
+(7, 'Sales and Account Manager', '2019-09-27 02:11:07', '2022-11-01 08:24:54', '2022-11-01 08:24:54'),
+(8, 'Team Lead', '2019-09-27 02:11:07', '2022-11-01 08:24:54', '2022-11-01 08:24:54');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `role_user`
+--
+
+CREATE TABLE `role_user` (
+  `role_id` bigint(20) UNSIGNED NOT NULL,
+  `user_id` bigint(20) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `role_user`
+--
+
+INSERT INTO `role_user` (`role_id`, `user_id`) VALUES
+(1, 1),
+(2, 2),
+(4, 30),
+(4, 32),
+(1, 1),
+(2, 2),
+(4, 30),
+(4, 32),
+(1, 1),
+(2, 2),
+(4, 30),
+(4, 32),
+(1, 1),
+(2, 2),
+(4, 30),
+(4, 32),
+(4, 38);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `settings`
+--
+
+CREATE TABLE `settings` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `logo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `favico` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `link` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `settings`
+--
+
+INSERT INTO `settings` (`id`, `name`, `title`, `logo`, `favico`, `email`, `phone`, `address`, `link`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'Nursing Council', 'nursing-council', '/assets/uploads/settings/FvO6e3hWBnwBv6nPHHwWOxqYNBp12WdJ78J8prs8.png', '/assets/uploads/settings/WYizE5xlOGQcQzmIVqjN3jbBSx0RaM18bc3wwrHr.png', 'info@nursingcouncilbahamas.com', '(242)6046015 / 6046017', 'Virginia & Augusta Streets Nassau, New Providence, The Bahamas P.O. Box N-8506', 'nursing-council.io', '2022-07-22 11:11:03', '2022-10-04 02:13:15', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sliders`
+--
+
+CREATE TABLE `sliders` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `page_id` bigint(20) UNSIGNED NOT NULL,
+  `page_slider_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slider_title` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `sliders`
+--
+
+INSERT INTO `sliders` (`id`, `page_id`, `page_slider_name`, `slider_title`, `created_at`, `updated_at`) VALUES
+(1, 1, 'home_what_we_do', 'ABOUT OUR WORK AND ROLE', NULL, '2022-08-26 07:36:08'),
+(2, 4, 'governance_work_in_fitness_to_practise', 'Our work in Fitness to practise', NULL, NULL),
+(3, 3, 'career_work_in_fitness_to_practise', 'title 3', NULL, NULL),
+(5, 3, 'careers_our_work_in_fitness_to_practise', 'title 4', NULL, NULL),
+(6, 6, 'who-we-work-with_our_work_in_fitness_to_practise', 'title 4', NULL, NULL),
+(7, 7, 'policy_our_work_in_fitness_to_practise', 'title 4', NULL, NULL),
+(8, 8, 'the_code_our_work_in_fitness_to_practise', 'title 4', NULL, NULL),
+(9, 9, 'standards-for-nurses_main_slider', 'title 4', NULL, NULL),
+(10, 11, 'standards-for-midwives_main_slider', 'title 4', NULL, NULL),
+(11, 12, 'standards-for-nursing-associates_main_slider', 'title 4', NULL, NULL),
+(12, 12, 'standards-for-nursing-associates_sub_slider', 'title 4', NULL, NULL),
+(13, 11, 'standards-for-midwives_sub_slider', 'title 4', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `slides`
+--
+
+CREATE TABLE `slides` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `slider_id` bigint(11) UNSIGNED NOT NULL,
+  `slide_image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slide_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `slide_sub_title` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `slide_details` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `slides`
+--
+
+INSERT INTO `slides` (`id`, `slider_id`, `slide_image`, `slide_title`, `slide_sub_title`, `slide_details`, `created_at`, `updated_at`) VALUES
+(6, 2, '/assets/uploads/slides/cp1KA1IxGmRn7jUHrU9B4kaGOM79BN7V1O0DM3VZ.jpg', 'slides for slider 2', 'sub title for slides 2', 'sub title for slides 2', '2022-08-25 11:59:47', '2022-08-31 08:55:28'),
+(8, 3, '/assets/uploads/slides/YZhAx0hWamntKTjBVdp6XGm24NwNODdMChf1ViqP.png', 'slider 56', 'sub title 656', 'slide details 1', '2022-08-25 12:01:41', '2022-08-25 12:01:41'),
+(10, 2, '/assets/uploads/slides/0juIoo6JtaoUp4K02ps4kgHdyNmSsl3q7ntg3bUx.png', 'slides for slider 2', 'new sub title for slide id 1', 'slide details 1', '2022-08-25 12:51:42', '2022-08-25 12:51:42'),
+(11, 2, '/assets/uploads/slides/bNxUBh4peWRJoP2OB6RFmYVA3kYqCX30dZUZL74J.jpg', 'Reprehenderit quia', 'Iusto sunt in autem', 'slide details 1', '2022-08-25 12:53:59', '2022-08-25 12:53:59'),
+(12, 1, '/assets/uploads/slides/LXa5bxHmKxU3mIrjcvkD0Fs7Z66q2hc2ZsbwM4bN.png', 'Visit Our Covid 19 Web', 'Coronavirus (Covid-19)', 'Coronavirus (Covid-19)', '2022-08-26 07:05:09', '2022-08-31 08:56:10'),
+(15, 1, '/assets/uploads/slides/fFamU1tlBV3vqmqYWeNSK7EAfKCTvOhS9Xv4zBTl.png', 'Visit Our Covid 19 Web', 'Coronavirus (Covid-19)', 'Coronavirus (Covid-19)', '2022-08-26 10:51:23', '2022-08-31 08:56:20'),
+(16, 1, '/assets/uploads/slides/LXa5bxHmKxU3mIrjcvkD0Fs7Z66q2hc2ZsbwM4bN.png', 'Visit Our Covid 19 Web', 'Coronavirus (Covid-19)', 'Coronavirus (Covid-19)', '2022-08-26 12:33:00', '2022-08-31 08:56:28'),
+(17, 2, '/assets/uploads/slides/slider-1.png', 'Visit Our Covid 19 Web', 'Coronavirus (Covid-19)', 'Caring with Confidence is a series of bite-sized animations about key aspects of your role, and how the Code can support you', '2022-08-26 07:05:09', '2022-08-26 07:05:09'),
+(18, 2, '/assets/uploads/slides/slider-1.png', 'slides for slider 2', 'slides', 'Everything you need to know about revalidation', '2022-08-26 10:51:23', '2022-08-26 11:20:27'),
+(19, 2, '/assets/uploads/slides/slider-1.png', 'slider', 'slider 2', ' How we act to protect the public', '2022-08-26 12:33:00', '2022-08-26 12:33:00'),
+(20, 2, '/assets/uploads/slides/slider-1.png', 'Visit Our Covid 19 Web', 'Coronavirus (Covid-19)', 'Everything you need to know about revalidation', '2022-08-26 07:05:09', '2022-08-26 07:05:09'),
+(21, 2, '/assets/uploads/slides/slider-1.png', 'slides for slider 2', 'slides', ' How we act to protect the public', '2022-08-26 10:51:23', '2022-08-26 11:20:27'),
+(22, 2, '/assets/uploads/slides/slider-1.png', 'slider', 'slider 2', 'Caring with Confidence is a series of bite-sized animations about key aspects of your role, and how the Code can support you', '2022-08-26 12:33:00', '2022-08-26 12:33:00'),
+(25, 3, '/assets/uploads/slides/YZhAx0hWamntKTjBVdp6XGm24NwNODdMChf1ViqP.png', 'slider 56', 'sub title 656', 'slide details 1', '2022-08-25 12:01:41', '2022-08-25 12:01:41'),
+(26, 3, '/assets/uploads/slides/YZhAx0hWamntKTjBVdp6XGm24NwNODdMChf1ViqP.png', 'slider 56', 'sub title 656', 'slide details 1', '2022-08-25 12:01:41', '2022-08-25 12:01:41'),
+(27, 3, '/assets/uploads/slides/YZhAx0hWamntKTjBVdp6XGm24NwNODdMChf1ViqP.png', 'slider 56', 'sub title 656', 'slide details 1', '2022-08-25 12:01:41', '2022-08-25 12:01:41'),
+(28, 6, '/assets/uploads/slides/YZhAx0hWamntKTjBVdp6XGm24NwNODdMChf1ViqP.png', 'slider 56', 'sub title 656', 'slide details 1', '2022-08-25 12:01:41', '2022-08-25 12:01:41'),
+(29, 6, '/assets/uploads/slides/YZhAx0hWamntKTjBVdp6XGm24NwNODdMChf1ViqP.png', 'slider 56', 'sub title 656', 'slide details 1', '2022-08-25 12:01:41', '2022-08-25 12:01:41'),
+(30, 6, '/assets/uploads/slides/YZhAx0hWamntKTjBVdp6XGm24NwNODdMChf1ViqP.png', 'slider 56', 'sub title 656', 'slide details 1', '2022-08-25 12:01:41', '2022-08-25 12:01:41'),
+(31, 6, '/assets/uploads/slides/YZhAx0hWamntKTjBVdp6XGm24NwNODdMChf1ViqP.png', 'slider 56', 'sub title 656', 'slide details 1', '2022-08-25 12:01:41', '2022-08-25 12:01:41'),
+(32, 7, '/assets/uploads/slides/YZhAx0hWamntKTjBVdp6XGm24NwNODdMChf1ViqP.png', 'slider 56', 'sub title 656', 'slide details 1', '2022-08-25 12:01:41', '2022-08-25 12:01:41'),
+(33, 7, '/assets/uploads/slides/YZhAx0hWamntKTjBVdp6XGm24NwNODdMChf1ViqP.png', 'slider 56', 'sub title 656', 'slide details 1', '2022-08-25 12:01:41', '2022-08-25 12:01:41'),
+(34, 7, '/assets/uploads/slides/YZhAx0hWamntKTjBVdp6XGm24NwNODdMChf1ViqP.png', 'slider 56', 'sub title 656', 'slide details 1', '2022-08-25 12:01:41', '2022-08-25 12:01:41'),
+(35, 7, '/assets/uploads/slides/YZhAx0hWamntKTjBVdp6XGm24NwNODdMChf1ViqP.png', 'slider 56', 'sub title 656', 'slide details 1', '2022-08-25 12:01:41', '2022-08-25 12:01:41'),
+(36, 8, '/assets/uploads/slides/YZhAx0hWamntKTjBVdp6XGm24NwNODdMChf1ViqP.png', 'slider 56', 'sub title 656', 'slide details 1', '2022-08-25 12:01:41', '2022-08-25 12:01:41'),
+(37, 8, '/assets/uploads/slides/YZhAx0hWamntKTjBVdp6XGm24NwNODdMChf1ViqP.png', 'slider 56', 'sub title 656', 'slide details 1', '2022-08-25 12:01:41', '2022-08-25 12:01:41'),
+(38, 8, '/assets/uploads/slides/YZhAx0hWamntKTjBVdp6XGm24NwNODdMChf1ViqP.png', 'slider 56', 'sub title 656', 'slide details 1', '2022-08-25 12:01:41', '2022-08-25 12:01:41'),
+(39, 8, '/assets/uploads/slides/YZhAx0hWamntKTjBVdp6XGm24NwNODdMChf1ViqP.png', 'slider 56', 'sub title 656', 'slide details 1', '2022-08-25 12:01:41', '2022-08-25 12:01:41'),
+(40, 9, '/assets/uploads/slides/YZhAx0hWamntKTjBVdp6XGm24NwNODdMChf1ViqP.png', 'slider 56', 'sub title 656', 'slide details 1', '2022-08-25 12:01:41', '2022-08-25 12:01:41'),
+(41, 9, '/assets/uploads/slides/YZhAx0hWamntKTjBVdp6XGm24NwNODdMChf1ViqP.png', 'slider 56', 'sub title 656', 'slide details 1', '2022-08-25 12:01:41', '2022-08-25 12:01:41'),
+(42, 9, '/assets/uploads/slides/YZhAx0hWamntKTjBVdp6XGm24NwNODdMChf1ViqP.png', 'slider 56', 'sub title 656', 'slide details 1', '2022-08-25 12:01:41', '2022-08-25 12:01:41'),
+(43, 9, '/assets/uploads/slides/YZhAx0hWamntKTjBVdp6XGm24NwNODdMChf1ViqP.png', 'slider 56', 'sub title 656', 'slide details 1', '2022-08-25 12:01:41', '2022-08-25 12:01:41'),
+(44, 9, '/assets/uploads/slides/YZhAx0hWamntKTjBVdp6XGm24NwNODdMChf1ViqP.png', 'slider 56', 'sub title 656', 'slide details 1', '2022-08-25 12:01:41', '2022-08-25 12:01:41'),
+(45, 9, '/assets/uploads/slides/YZhAx0hWamntKTjBVdp6XGm24NwNODdMChf1ViqP.png', 'slider 56', 'sub title 656', 'slide details 1', '2022-08-25 12:01:41', '2022-08-25 12:01:41'),
+(46, 9, '/assets/uploads/slides/YZhAx0hWamntKTjBVdp6XGm24NwNODdMChf1ViqP.png', 'slider 56', 'sub title 656', 'slide details 1', '2022-08-25 12:01:41', '2022-08-25 12:01:41'),
+(47, 10, '/assets/uploads/slides/YZhAx0hWamntKTjBVdp6XGm24NwNODdMChf1ViqP.png', 'slider 56', 'sub title 656', 'slide details 1', '2022-08-25 12:01:41', '2022-08-25 12:01:41'),
+(48, 10, '/assets/uploads/slides/YZhAx0hWamntKTjBVdp6XGm24NwNODdMChf1ViqP.png', 'slider 56', 'sub title 656', 'slide details 1', '2022-08-25 12:01:41', '2022-08-25 12:01:41'),
+(49, 10, '/assets/uploads/slides/YZhAx0hWamntKTjBVdp6XGm24NwNODdMChf1ViqP.png', 'slider 56', 'sub title 656', 'slide details 1', '2022-08-25 12:01:41', '2022-08-25 12:01:41'),
+(50, 10, '/assets/uploads/slides/YZhAx0hWamntKTjBVdp6XGm24NwNODdMChf1ViqP.png', 'slider 56', 'sub title 656', 'slide details 1', '2022-08-25 12:01:41', '2022-08-25 12:01:41'),
+(51, 10, '/assets/uploads/slides/YZhAx0hWamntKTjBVdp6XGm24NwNODdMChf1ViqP.png', 'slider 56', 'sub title 656', 'slide details 1', '2022-08-25 12:01:41', '2022-08-25 12:01:41'),
+(52, 10, '/assets/uploads/slides/YZhAx0hWamntKTjBVdp6XGm24NwNODdMChf1ViqP.png', 'slider 56', 'sub title 656', 'slide details 1', '2022-08-25 12:01:41', '2022-08-25 12:01:41'),
+(53, 11, '/assets/uploads/slides/YZhAx0hWamntKTjBVdp6XGm24NwNODdMChf1ViqP.png', 'slider 56', 'sub title 656', 'slide details 1', '2022-08-25 12:01:41', '2022-08-25 12:01:41'),
+(54, 11, '/assets/uploads/slides/YZhAx0hWamntKTjBVdp6XGm24NwNODdMChf1ViqP.png', 'slider 56', 'sub title 656', 'slide details 1', '2022-08-25 12:01:41', '2022-08-25 12:01:41'),
+(55, 11, '/assets/uploads/slides/YZhAx0hWamntKTjBVdp6XGm24NwNODdMChf1ViqP.png', 'slider 56', 'sub title 656', 'slide details 1', '2022-08-25 12:01:41', '2022-08-25 12:01:41'),
+(56, 11, '/assets/uploads/slides/YZhAx0hWamntKTjBVdp6XGm24NwNODdMChf1ViqP.png', 'slider 56', 'sub title 656', 'slide details 1', '2022-08-25 12:01:41', '2022-08-25 12:01:41'),
+(57, 11, '/assets/uploads/slides/YZhAx0hWamntKTjBVdp6XGm24NwNODdMChf1ViqP.png', 'slider 56', 'sub title 656', 'slide details 1', '2022-08-25 12:01:41', '2022-08-25 12:01:41'),
+(58, 12, '/assets/uploads/slides/YZhAx0hWamntKTjBVdp6XGm24NwNODdMChf1ViqP.png', 'slider 56', 'sub title 656', 'slide details 1', '2022-08-25 12:01:41', '2022-08-25 12:01:41'),
+(59, 12, '/assets/uploads/slides/YZhAx0hWamntKTjBVdp6XGm24NwNODdMChf1ViqP.png', 'slider 56', 'sub title 656', 'slide details 1', '2022-08-25 12:01:41', '2022-08-25 12:01:41'),
+(60, 13, '/assets/uploads/slides/YZhAx0hWamntKTjBVdp6XGm24NwNODdMChf1ViqP.png', 'slider 56', 'sub title 656', 'slide details 1', '2022-08-25 12:01:41', '2022-08-25 12:01:41'),
+(61, 13, '/assets/uploads/slides/YZhAx0hWamntKTjBVdp6XGm24NwNODdMChf1ViqP.png', 'slider 56', 'sub title 656', 'slide details 1', '2022-08-25 12:01:41', '2022-08-25 12:01:41'),
+(71, 3, 'maviya.jpg', 'new title for slider', 'slide 1 sub title id 1', 'slide 1 sub title id 1', '2022-08-31 08:42:31', '2022-08-31 08:46:41'),
+(72, 6, '/assets/uploads/slides/cp1KA1IxGmRn7jUHrU9B4kaGOM79BN7V1O0DM3VZ.jpg', 'testing', 'testing', 'testing', '2022-08-31 10:28:22', '2022-08-31 10:31:30');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `first_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `middle_name` varchar(80) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `last_name` varchar(80) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email_verified_at` timestamp NULL DEFAULT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `dob` date DEFAULT NULL,
+  `gender` enum('Male','Female') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Male',
+  `avatar` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'assets/images/users/avatar-2.jpg',
+  `theme` enum('dark','light') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'light',
+  `two_factor_code` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `two_factor_expires_at` datetime DEFAULT NULL,
+  `is_authenticate` tinyint(1) NOT NULL DEFAULT 0,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `first_name`, `middle_name`, `last_name`, `email`, `email_verified_at`, `phone`, `address`, `password`, `dob`, `gender`, `avatar`, `theme`, `two_factor_code`, `two_factor_expires_at`, `is_authenticate`, `remember_token`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'Super Admin', NULL, NULL, 'admin@gmail.com', NULL, '923333906233', NULL, '$2y$10$EvRh.16UX6GPXR.hjYirn..G4XXspAuMMLDqpDTBI21Ff.aEswTxC', NULL, 'Male', '/assets/uploads/users/sT8DaSjeCWrPKoJ1AOvxIYwc2ACSW5130AyUHp1P.jpg', 'light', NULL, NULL, 0, NULL, '2022-06-21 02:11:07', '2022-08-01 10:43:47', NULL),
+(2, 'Admin', NULL, NULL, 'nabeel@outsourcetoasia.co', NULL, '923333906233', NULL, '$2y$10$EvRh.16UX6GPXR.hjYirn..G4XXspAuMMLDqpDTBI21Ff.aEswTxC', NULL, 'Male', '/assets/uploads/users/GETw4HKdxLS1mItiLU3x2ks99wbrxOUt9Asesb56.jpg', 'light', NULL, NULL, 0, NULL, '2021-06-21 02:11:07', '2021-06-21 02:11:07', NULL),
+(3, 'Steve', NULL, NULL, 'Steve@gmail.com', NULL, '923333906233', NULL, '$2y$10$6uyKdZ6.ia7R9MwOYVlZ2utX7Z9LReAeHd5BinITG9nxETRw/1D.q', NULL, 'Male', '/assets/uploads/users/GETw4HKdxLS1mItiLU3x2ks99wbrxOUt9Asesb56.jpg', 'light', NULL, NULL, 0, NULL, '2021-06-21 02:11:07', '2021-06-21 02:11:07', NULL),
+(4, 'Albert', NULL, NULL, 'Albert@gmail.com', NULL, '923333906233', NULL, '$2y$10$U0FOi6hUVV8c7DY5lAmctu8QeSvpol5afz9YdTZNpqCydhScSVlcK', NULL, 'Male', '/assets/uploads/users/GETw4HKdxLS1mItiLU3x2ks99wbrxOUt9Asesb56.jpg', 'light', NULL, NULL, 0, NULL, '2021-06-21 02:11:07', '2021-06-21 02:11:07', NULL),
+(30, 'bilal', NULL, NULL, 'bilal@gmail.com', NULL, '16346464', NULL, '$2y$10$CKXs87sRn7sKxF8ypGuka.gJ69x5ZSD38c67Ao6ce3d60opWYo8zi', NULL, 'Male', '/assets/uploads/lead/6ayt3CNgKRtuSWueumfL9rqs11fZIjX1Mb71Q96F.png', 'light', NULL, NULL, 0, NULL, '2022-08-15 10:39:09', '2022-08-15 10:39:09', NULL),
+(32, 'ab@aaa', NULL, NULL, 'abn@yaail.com', NULL, NULL, NULL, '$2y$10$mr5lN4EFt/vJ4aoBy5Or9ulAeGn38KT4GhDxDh6qFET7xDVMFxA.C', NULL, 'Male', 'assets/images/users/avatar-2.jpg', 'light', NULL, NULL, 0, NULL, '2022-08-16 06:13:44', '2022-08-16 06:14:44', NULL),
+(38, 'Ali', 'New', 'Acount', 'ali@gmail.com', NULL, '03216549777', 'karachi', '$2y$10$s2iFDu.jvrZMeLZ9F1amGuuaPH.fTraMZ/qLxt7sdBbohOHuBxsfi', '2022-11-03', 'Male', '/assets/uploads/users/0yGiiszMliFuQRESM1QiRUURCI8WAs7BaniCvy94.png', 'light', NULL, NULL, 0, NULL, '2022-11-01 08:41:31', '2022-11-01 08:41:31', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_documents`
+--
+
+CREATE TABLE `user_documents` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `file_path` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` enum('0','1') COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '0 = general and 1 = educational',
+  `user_id` bigint(20) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `user_documents`
+--
+
+INSERT INTO `user_documents` (`id`, `file_path`, `status`, `user_id`, `created_at`, `updated_at`) VALUES
+(1, '/assets/uploads/upload-document/ZyNo0DvpbZMgrlN8r4Xj7z6Gy41wZhEBP47dZ1g2.txt', '0', 38, NULL, NULL),
+(2, '/assets/uploads/upload-document/emP2e7x7HyvqhMVqXSF6IWNcr5dOwdhz9eWNsUTk.txt', '0', 38, NULL, NULL),
+(3, '/assets/uploads/upload-document/DnVbIR1C5AKHfrPY0rVNlrRlL5NlyyotyeNKP5Am', '0', 38, NULL, NULL),
+(4, '/assets/uploads/upload-document/jipmKqgbDth6eDIts2qTo0LANvR88VNgMRPalbDu.txt', '1', 38, NULL, NULL),
+(5, '/assets/uploads/upload-document/onQ1uYRSeAYJDPFM5ByVUdCrSOUq4L85MYOvglFt.txt', '1', 38, NULL, NULL);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `cards`
+--
+ALTER TABLE `cards`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `cards_page_id_foreign` (`page_id`);
+
+--
+-- Indexes for table `card_details`
+--
+ALTER TABLE `card_details`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `card_details_card_id_foreign` (`card_id`);
+
+--
+-- Indexes for table `failed_jobs`
+--
+ALTER TABLE `failed_jobs`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
+
+--
+-- Indexes for table `forms`
+--
+ALTER TABLE `forms`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `front_setting`
+--
+ALTER TABLE `front_setting`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `migrations`
+--
+ALTER TABLE `migrations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `news`
+--
+ALTER TABLE `news`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `pages`
+--
+ALTER TABLE `pages`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `pages_contents`
+--
+ALTER TABLE `pages_contents`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `page_relations` (`page_id`);
+
+--
+-- Indexes for table `page_introductions`
+--
+ALTER TABLE `page_introductions`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `page_introductions_page_id_foreign` (`page_id`);
+
+--
+-- Indexes for table `password_resets`
+--
+ALTER TABLE `password_resets`
+  ADD KEY `password_resets_email_index` (`email`);
+
+--
+-- Indexes for table `permissions`
+--
+ALTER TABLE `permissions`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `permission_role`
+--
+ALTER TABLE `permission_role`
+  ADD KEY `permission_role_role_id_foreign` (`role_id`),
+  ADD KEY `permission_role_permission_id_foreign` (`permission_id`);
+
+--
+-- Indexes for table `roles`
+--
+ALTER TABLE `roles`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `role_user`
+--
+ALTER TABLE `role_user`
+  ADD KEY `role_user_role_id_foreign` (`role_id`),
+  ADD KEY `role_user_user_id_foreign` (`user_id`);
+
+--
+-- Indexes for table `settings`
+--
+ALTER TABLE `settings`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `sliders`
+--
+ALTER TABLE `sliders`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `page_relation` (`page_id`);
+
+--
+-- Indexes for table `slides`
+--
+ALTER TABLE `slides`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `sliders_relation` (`slider_id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `users_email_unique` (`email`);
+
+--
+-- Indexes for table `user_documents`
+--
+ALTER TABLE `user_documents`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_documents_user_id_foreign` (`user_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `failed_jobs`
+--
+ALTER TABLE `failed_jobs`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `forms`
+--
+ALTER TABLE `forms`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `front_setting`
+--
+ALTER TABLE `front_setting`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `migrations`
+--
+ALTER TABLE `migrations`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT for table `news`
+--
+ALTER TABLE `news`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+
+--
+-- AUTO_INCREMENT for table `pages`
+--
+ALTER TABLE `pages`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
+-- AUTO_INCREMENT for table `pages_contents`
+--
+ALTER TABLE `pages_contents`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `permissions`
+--
+ALTER TABLE `permissions`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
+
+--
+-- AUTO_INCREMENT for table `roles`
+--
+ALTER TABLE `roles`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `settings`
+--
+ALTER TABLE `settings`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `sliders`
+--
+ALTER TABLE `sliders`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `slides`
+--
+ALTER TABLE `slides`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+
+--
+-- AUTO_INCREMENT for table `user_documents`
+--
+ALTER TABLE `user_documents`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `pages_contents`
+--
+ALTER TABLE `pages_contents`
+  ADD CONSTRAINT `page_relations` FOREIGN KEY (`page_id`) REFERENCES `pages` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `permission_role`
+--
+ALTER TABLE `permission_role`
+  ADD CONSTRAINT `permission_role_permission_id_foreign` FOREIGN KEY (`permission_id`) REFERENCES `permissions` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `permission_role_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `role_user`
+--
+ALTER TABLE `role_user`
+  ADD CONSTRAINT `role_user_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `role_user_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `sliders`
+--
+ALTER TABLE `sliders`
+  ADD CONSTRAINT `page_relation` FOREIGN KEY (`page_id`) REFERENCES `pages` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `slides`
+--
+ALTER TABLE `slides`
+  ADD CONSTRAINT `sliders_relation` FOREIGN KEY (`slider_id`) REFERENCES `sliders` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `user_documents`
+--
+ALTER TABLE `user_documents`
+  ADD CONSTRAINT `user_documents_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

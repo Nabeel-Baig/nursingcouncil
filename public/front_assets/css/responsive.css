@@ -1,0 +1,349 @@
+@media (min-width: 1399px) and (max-width: 1650px) {
+    .navbar-expand-lg .navbar-nav .nav-link {
+        padding: 8px 18px;
+    }
+
+    .iconCard .detail span {
+        font-size: 14px;
+    }
+
+    .iconCard .detail p {
+        font-size: 12px;
+    }
+
+    .navbar-nav {
+        margin-left: 0;
+    }
+}
+
+@media(max-width:1399px) {
+    .formSide:before {
+        max-width: 450px;
+        left: -180px;
+    }
+
+    .intoData {
+        padding: 80px 80px 80px 30px;
+    }
+
+    .headerAbout {
+        display: none;
+    }
+}
+
+@media(max-width:1199px) {
+
+    .mainThemeBtn {
+        padding: 8px 30px;
+    }
+
+    .navbar-nav {
+        margin-left: auto;
+    }
+
+    .navbar-expand-lg .navbar-nav .nav-link {
+        padding: 8px 20px;
+    }
+
+    .heroSection .mainData {
+        position: relative;
+        z-index: 1;
+    }
+
+
+    .formSide:before {
+        max-width: 350px;
+        left: -180px;
+        z-index: 0;
+        top: inherit;
+        bottom: -110px;
+    }
+
+    .intoData {
+        padding: 40px 0px 40px 10px;
+    }
+
+    .processCard a {
+        padding: 10px;
+    }
+}
+
+
+@media(max-width:991px) {
+    .topMenu {
+        display: none;
+    }
+
+    .topinnerRow div {
+        text-align: center !important;
+    }
+
+    .topinnerRow .socialIconList,
+    .topinnerRow .searchIcon {
+        margin-top: 5px;
+    }
+
+    .navbar {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 999;
+        background-color: rgba(0, 0, 0, 0.6) !important;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+
+    .navbar-expand-lg .navbar-nav .nav-link {
+        color: #fff !important;
+    }
+
+    .navbar-brand {
+        margin-top: 0;
+    }
+
+    .navbar-brand img {
+        max-width: 90px;
+        width: 100%;
+    }
+
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .formSide {
+        margin-top: 50px;
+    }
+
+    .formSide:before {
+        max-width: 450px;
+        left: -110px;
+        bottom: -40px;
+    }
+
+    .aboutSliderData .data {
+        left: 20px;
+    }
+
+    .aboutSliderData .data .quote {
+        max-width: 600px;
+    }
+
+    .aboutSliderData {
+        height: 400px;
+    }
+
+    .processCard {
+        margin-bottom: 40px;
+    }
+
+    .navbar-expand-lg .navbar-nav .nav-link.active:before {
+        width: 20%;
+        height: 2px;
+        bottom: 5px;
+    }
+
+    button.navbar-toggler span {
+        color: #fff;
+    }
+
+    .dropdown-menu {
+        width: 100%;
+        max-width: fit-content !important;
+        font-weight: 600 !important;
+        color: #212529 !important;
+        background-color: #c1bdbd !important;
+        margin: auto !important;
+        text-align: center !important;
+        padding: 0 !important;
+    }
+
+    .dropdown-item {
+        font-weight: 600 !important;
+    }
+
+    .heroSection .mainData {
+        padding-top: 100px;
+    }
+
+    .navbar-toggler:focus,
+    button:focus-visible {
+        outline: 0 !important;
+        box-shadow: none !important;
+    }
+
+    .aboutCard a {
+        position: inherit;
+        bottom: inherit;
+    }
+
+    .aboutVideo iframe {
+        width: 100%;
+        height: 265px;
+    }
+
+}
+
+@media(max-width:767px) {
+    .formSide:before {
+        max-width: 250px;
+        bottom: -31px;
+        height: 400px;
+    }
+
+    .aboutSliderData .data .quote {
+        max-width: 460px;
+        padding-right: 10px;
+    }
+
+    .processCard a {
+        padding: 10px 30px;
+    }
+
+    .aboutSection {
+        padding: 530px 0 100px;
+    }
+
+    .newsSection {
+        padding: 80px 0 80px;
+    }
+
+    .processSection {
+        padding: 50px 0;
+    }
+
+    .copyright p {
+        text-align: center;
+    }
+
+    .copyright .footerSocial {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    footer {
+        padding-top: 50px;
+        text-align: center;
+    }
+
+
+    .centerBTN {
+        text-align: center !important;
+        margin-bottom: 30px;
+    }
+
+    footer .footerNews .img {
+        width: 20%;
+        margin: auto;
+        margin-right: 10px;
+    }
+
+    footer .footerNews .data {
+        width: 75%;
+    }
+
+    .abtContent,
+    .iWant,
+    .moreAbout,
+    .ourWork {
+        padding: 50px 0;
+    }
+
+    .videoBanner {
+        padding-top: 30px;
+    }
+
+    .appProgramsMainBanner{
+        padding: 150px 0 100px;
+    }
+}
+
+@media(max-width:600px) {
+    .mainThemeBtn {
+        font-size: 20px;
+        padding: 8px 30px;
+    }
+
+    .formSide:before {
+        display: none;
+    }
+
+    .formSide,
+    .formSide form {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .formSide {
+        padding: 30px 20px 20px;
+        margin-bottom: 30px;
+    }
+
+    .heroSection .mainData h1 {
+        font-size: 26px;
+        word-spacing: 0;
+        letter-spacing: 8px;
+    }
+
+    .heroSection .mainData h2 {
+        font-size: 36px;
+    }
+
+    .heroSection .mainData p {
+        font-size: 24px;
+    }
+
+    .formSide form button {
+        font-size: 20px;
+    }
+
+    .intoData h3,
+    .processSection h4,
+    .aboutData h4,
+    .aboutSliderData .data h4,
+    .newstData h4 {
+        font-size: 28px;
+    }
+
+    .processSection h3,
+    .processSection h4 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    footer h5 {
+        margin-top: 25px;
+    }
+
+    .intoData h3 {
+        max-width: 280px;
+    }
+
+    .iWantTitle,
+    .moreAbout h3,
+    .ourWorkTitle {
+        font-size: 34px;
+    }
+
+    .iWantCard h4 {
+        font-size: 24px;
+    }
+
+}
+
+@media(max-width:480px) {
+    .dualHeading {
+        font-size: 30px;
+    }
+
+    .updatePageCard i {
+        font-size: 16px;
+    }
+
+    .recentPages .updatePageCard a {
+        font-size: 18px;
+    }
+
+    .recentPages p {
+        font-size: 18px;
+    }
+}

@@ -1,0 +1,21 @@
+
+@font-face {
+    font-family: "Rajdhani";
+    src: url("../fonts/rajdhani-regular.ttf") format("truetype");
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Rajdhani";
+    src: url("../fonts/rajdhani-medium.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Rajdhani";
+    src: url("../fonts/rajdhani-semibold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+}

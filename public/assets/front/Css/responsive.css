@@ -1,0 +1,104 @@
+@media screen and (max-width: 991px) {
+    .moboileVeiw ul {
+        display: flex;
+        width: 100%;
+    }
+    li.nav-item.footerStartAfundly {
+        display: block;
+        width: 100%;
+    }
+    li.nav-item.footerStartAfundly .StartAfundly {
+        display: block;
+        width: 100%;
+        background: #30515b;
+        color: #fff !important;
+    }
+    .nav-link {
+        margin: auto;
+    }
+    .moboileVeiw ul li {
+        margin: auto 20px;
+        text-align: center;
+    }
+    .socialMediaIcons,
+    .navbar-brand,
+    .searchLi {
+        display: none;
+    }
+    .moboileVeiw .navbar-brand {
+        display: block;
+    }
+    .homeSection01 .row {
+        padding-top: 60px;
+    }
+    .homeSection02 a.fundraisersCards img {
+        border-radius: 15px 15px 0px 0px;
+    }
+    .successStoriesCard img,
+    .successStoriesCard h6 {
+        margin-bottom: 10px;
+    }
+    .shareArticle {
+        text-align: center;
+    }
+    .shareArticle h5 {
+        margin-bottom: 12px !important;
+        display: block;
+    }
+    .date {
+        text-align: center;
+    }
+    .selectCountry {
+        display: block;
+    }
+
+    .nonProfitImg01{
+        margin-bottom: 40px;
+    }
+    
+    .donationHeading .input-group{
+        height: 70px;
+    }
+
+    .donationHeading input,
+    .donationHeading .input-group-text{
+        font-size: 30px;
+    }
+    .moboileVeiw {
+        display: block;
+        margin: auto;
+    }
+    .searchBarActive{
+        width: 100%;
+    }
+    .searchBar input{
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 1199px) and (min-width: 992px) {
+    .homeSection02 .findFundraising .fundraisersCards .card,
+    .newFundraisers a.fundraisersCards img {
+        min-height: 350px;
+        max-height: 350px;
+    }
+    .findFundraising a.fundraisersCards img {
+        max-height: 200px;
+        min-height: 200px;
+    }
+    .findFundraising .fundraisersCards .card {
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 1366px) and (min-width: 1200px) {
+    .Over10000PeopleCards h6 {
+        font-size: 0.7rem;
+    }
+}
+
+@media screen and (max-width: 1199px) and (min-width: 1000px) {
+    .Over10000PeopleCards h6 {
+        font-size: 0.5rem;
+    }
+}
